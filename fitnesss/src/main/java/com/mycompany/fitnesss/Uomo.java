@@ -69,6 +69,10 @@ public class Uomo extends Utente{
     public int getNormocalorie(){
         return super.getNormocalorie();
     }
+    
+    public int getCalorieGiornaliere(){
+        return super.getCalorie_giornaliere();
+    }
 
     public int getMetabolismo_basale(){
         return super.getMetabolismo_basale();
