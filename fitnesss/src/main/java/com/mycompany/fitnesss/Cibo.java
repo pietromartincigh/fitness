@@ -16,10 +16,8 @@ public class Cibo {
     private int kcal; //100g
     private int proteine;
     private int carboidrati;
-    private int zuccheri;
     private int grassi;
-    private int grassi_saturi;
-    private int sodio;//?????
+    private int sodio;
 
     public String getNome() {
         return nome;
@@ -53,14 +51,6 @@ public class Cibo {
         this.carboidrati = carboidrati;
     }
 
-    public int getZuccheri() {
-        return zuccheri;
-    }
-
-    public void setZuccheri(int zuccheri) {
-        this.zuccheri = zuccheri;
-    }
-
     public int getGrassi() {
         return grassi;
     }
@@ -69,14 +59,14 @@ public class Cibo {
         this.grassi = grassi;
     }
 
-    public int getGrassi_saturi() {
-        return grassi_saturi;
+    public int getSodio() {
+        return sodio;
     }
 
-    public void setGrassi_saturi(int grassi_saturi) {
-        this.grassi_saturi = grassi_saturi;
+    public void setSodio(int sodio) {
+        this.sodio = sodio;
     }
-    
+
     
     
 }
