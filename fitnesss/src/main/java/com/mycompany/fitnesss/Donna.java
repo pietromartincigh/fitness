@@ -76,7 +76,7 @@ public class Donna extends Utente{
     
     public void calcoloMetabolismo_basale(){
         
-        super.setMetabolismo_basale((int)(66.47 + (13.75 * super.getKg()) + (5 * super.getCm()) - (6.75*super.getEta())));
+        super.setMetabolismo_basale((int)(665.09 + (9.56 * super.getKg()) + (1.84 * super.getCm()) - (4.67*super.getEta())));
     }
     
     
