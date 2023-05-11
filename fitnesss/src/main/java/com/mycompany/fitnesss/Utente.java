@@ -142,12 +142,12 @@ public class Utente {
     
     
     
-    public void scalaCibo(Cibo cibo, int gr) throws Exception{
+    public void scalaCibo(Cibo cibo, int g) throws Exception{
     
         if(calorie_giornaliere <= 0)
             throw new Exception("Calorie massime già raggiunte");
         
-        int temp_cal = cibo.getKcal()*(gr/100);
+        int temp_cal = cibo.getKcal()*(g/100);
         
         if(calorie_giornaliere - temp_cal <= 0)
             throw new Exception("Superi limite calorie");
