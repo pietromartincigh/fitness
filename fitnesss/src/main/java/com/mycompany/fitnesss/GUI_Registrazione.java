@@ -55,7 +55,12 @@ public ArrayList <Utente> utenti = new ArrayList <Utente>();
         username_TF = new javax.swing.JTextField();
         password_TF = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
+ 
+        jButton1 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+
         signUp_B = new javax.swing.JButton();
+ 
 
         jLabel9.setText("jLabel9");
 
@@ -134,6 +139,8 @@ public ArrayList <Utente> utenti = new ArrayList <Utente>();
             }
         });
 
+        jLabel15.setText("Vergognoso, sei veramente imbarazzante");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -183,9 +190,16 @@ public ArrayList <Utente> utenti = new ArrayList <Utente>();
                                         .addComponent(pa_CB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addComponent(password_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+
+                                .addComponent(jButton1)
+                                .addGap(103, 103, 103))))
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(58, Short.MAX_VALUE))
+
                                 .addComponent(signUp_B)
                                 .addGap(103, 103, 103)))))
                 .addContainerGap(253, Short.MAX_VALUE))
+
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,8 +249,15 @@ public ArrayList <Utente> utenti = new ArrayList <Utente>();
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
+
+                .addGap(13, 13, 13)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+
                 .addGap(41, 41, 41)
                 .addComponent(signUp_B)
+
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -447,6 +468,7 @@ public ArrayList <Utente> utenti = new ArrayList <Utente>();
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
