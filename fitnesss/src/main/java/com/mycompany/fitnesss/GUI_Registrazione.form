@@ -73,7 +73,7 @@
                               <Component id="altezza_TF" min="-2" pref="71" max="-2" attributes="0"/>
                               <Component id="eta_TF" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
                               <Component id="cognome_TF" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="name_TF" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="nome_TF" min="-2" pref="71" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -122,7 +122,7 @@
                   <Component id="jLabel2" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="name_TF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="nome_TF" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -190,7 +190,7 @@
             <Property name="text" type="java.lang.String" value="REGISTRAZIONE"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="name_TF">
+        <Component class="javax.swing.JTextField" name="nome_TF">
         </Component>
         <Component class="javax.swing.JTextField" name="cognome_TF">
         </Component>
@@ -248,11 +248,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Male"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="male_BOXMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="female_BOX">
           <Properties>
             <Property name="text" type="java.lang.String" value="Female"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="female_BOXMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="pa_CB">
           <Properties>
@@ -318,6 +324,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Sign up"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="signUp_BMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

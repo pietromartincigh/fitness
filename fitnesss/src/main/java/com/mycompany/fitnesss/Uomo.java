@@ -14,9 +14,9 @@ public class Uomo extends Utente{
         super();
     }
     
-    public Uomo(String nome, double kg, double cm, double lv_attivita, int eta, int obiettivo){
+    public Uomo(String nome, String cognome, String username, String password, double kg, int cm, double lv_attivita, int eta, int obiettivo){
         
-        super(nome, kg, cm, lv_attivita, eta, obiettivo);       
+        super(nome, cognome, username, password,kg, cm, lv_attivita, eta, obiettivo);       
         calcoloMetabolismo_basale();
     }
     
@@ -31,11 +31,11 @@ public class Uomo extends Utente{
         super.allCalcoli();
     }
     
-    public double getCm(){
+    public int getCm(){
         return super.getCm();
     }
 
-    public void setCm(double cm) {
+    public void setCm(int cm) {
         super.setCm(cm);
         calcoloMetabolismo_basale();
         super.allCalcoli();

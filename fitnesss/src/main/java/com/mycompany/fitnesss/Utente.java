@@ -11,10 +11,12 @@ package com.mycompany.fitnesss;
 public class Utente {
     
     private String nome;
+    private String cognome;
+    private String username;
     private String password;
     
     private double kg;
-    private double cm;
+    private int cm;
     private int eta;
     private double lv_attivita; //quantità di attività fisica fatta al giorno
     private int metabolismo_basale;
@@ -28,9 +30,12 @@ public class Utente {
         
     }
     
-    public Utente(String nome, double kg, double cm, double lv_attivita, int eta, int obiettivo){
+    public Utente(String nome, String cognome, String username, String password, double kg, int cm, double lv_attivita, int eta, int obiettivo){
         
         this.nome = nome;
+        this.cognome = cognome;
+        this.username = username;
+        this.password = password;
         this.kg = kg;
         this.cm = cm;
         this.lv_attivita = lv_attivita;
@@ -47,6 +52,22 @@ public class Utente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
     
     public String getPassword(){
@@ -65,11 +86,11 @@ public class Utente {
         this.kg = kg;
     }
 
-    public double getCm() {
+    public int getCm() {
         return cm;
     }
 
-    public void setCm(double cm) {
+    public void setCm(int cm) {
         this.cm = cm;
     }
 

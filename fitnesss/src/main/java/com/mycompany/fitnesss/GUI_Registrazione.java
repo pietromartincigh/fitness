@@ -5,6 +5,7 @@
 package com.mycompany.fitnesss;
 
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,7 +21,9 @@ public class GUI_Registrazione extends javax.swing.JFrame {
     }
 
 private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+private int contatore_utenti = 0;
 
+public ArrayList <Utente> utenti = new ArrayList <Utente>();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -29,7 +32,7 @@ private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         jLabel9 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        name_TF = new javax.swing.JTextField();
+        nome_TF = new javax.swing.JTextField();
         cognome_TF = new javax.swing.JTextField();
         eta_TF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -97,8 +100,18 @@ private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         jLabel8.setText("cm");
 
         male_BOX.setText("Male");
+        male_BOX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                male_BOXMouseClicked(evt);
+            }
+        });
 
         female_BOX.setText("Female");
+        female_BOX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                female_BOXMouseClicked(evt);
+            }
+        });
 
         pa_CB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "low(no exercise)", "moderate (light esercise)", "high (moderate exercise)", "very high (intense exercise)" }));
 
@@ -115,6 +128,11 @@ private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         jLabel14.setText("Pasword:");
 
         signUp_B.setText("Sign up");
+        signUp_B.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signUp_BMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -141,7 +159,7 @@ private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             .addComponent(altezza_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(eta_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cognome_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(name_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nome_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
@@ -176,7 +194,7 @@ private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(name_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nome_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -317,6 +335,71 @@ private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         }
     }//GEN-LAST:event_altezza_TFKeyReleased
 
+    
+    
+    private void signUp_BMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUp_BMouseClicked
+        
+        boolean errore = false;
+        
+
+            
+            if(nome_TF.getText() == null)
+                errore = true;
+            if(cognome_TF.getText() == null)
+                errore = true;
+            if(eta_TF.getText() == null)
+                errore = true;
+            if(peso_TF.getText() == null)
+                errore = true;
+            if(altezza_TF.getText() == null)
+                errore = true;
+            if(username_TF.getText() == null)
+                errore = true;
+            if(password_TF.getText() == null)
+                errore = true;
+            if(male_BOX.isSelected() == female_BOX.isSelected())
+                errore = true;
+            
+            if(errore = true){
+                //mettere errore che viene fuori nel caso
+            }
+            else{
+                
+                String nome = nome_TF.getText();
+                String cognome = cognome_TF.getText();
+                String username = username_TF.getText();
+                String password = password_TF.getText();
+                int eta = Integer.parseInt(eta_TF.getText());
+                double peso = Double.parseDouble(peso_TF.getText());
+                int altezza = Integer.parseInt(altezza_TF.getText());
+                
+                
+                if(male_BOX.isSelected()){
+                    Uomo temp = new Uomo(nome, cognome, username, password, peso, altezza,10, eta,10 );
+                    utenti.add(temp);
+                    contatore_utenti+=1;
+                }
+                
+                else{
+                    Donna temp = new Donna(nome, cognome, username, password, peso, altezza,10, eta,10 );
+                    utenti.add(temp);
+                    contatore_utenti+=1;
+                }
+            }
+        
+    }//GEN-LAST:event_signUp_BMouseClicked
+
+    private void male_BOXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_male_BOXMouseClicked
+        if(female_BOX.isSelected())
+            female_BOX.setSelected(false);
+            
+    }//GEN-LAST:event_male_BOXMouseClicked
+
+    private void female_BOXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_female_BOXMouseClicked
+        if(male_BOX.isSelected())
+            male_BOX.setSelected(false);
+    }//GEN-LAST:event_female_BOXMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -374,7 +457,7 @@ private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JCheckBox male_BOX;
-    private javax.swing.JTextField name_TF;
+    private javax.swing.JTextField nome_TF;
     private javax.swing.JComboBox<String> pa_CB;
     private javax.swing.JTextField password_TF;
     private javax.swing.JTextField peso_TF;
