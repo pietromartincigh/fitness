@@ -53,6 +53,7 @@ public class GUI_Registrazione extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
 
         jLabel9.setText("jLabel9");
 
@@ -104,6 +105,8 @@ public class GUI_Registrazione extends javax.swing.JFrame {
 
         jButton1.setText("Sign up");
 
+        jLabel15.setText("Vergognoso, sei veramente imbarazzante");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -154,8 +157,9 @@ public class GUI_Registrazione extends javax.swing.JFrame {
                                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1)
-                                .addGap(103, 103, 103)))))
-                .addContainerGap(253, Short.MAX_VALUE))
+                                .addGap(103, 103, 103))))
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +209,9 @@ public class GUI_Registrazione extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addGap(41, 41, 41)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addContainerGap(50, Short.MAX_VALUE))
         );
@@ -275,6 +281,7 @@ public class GUI_Registrazione extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
