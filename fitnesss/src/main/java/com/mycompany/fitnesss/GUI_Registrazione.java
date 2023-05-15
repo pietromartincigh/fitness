@@ -21,6 +21,7 @@ public class GUI_Registrazione extends javax.swing.JFrame {
     }
 
 private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+private char[] numeri = "0123456789".toCharArray();
 private int contatore_utenti = 0;
 
 public ArrayList <Utente> utenti = new ArrayList <Utente>();
@@ -360,9 +361,10 @@ public ArrayList <Utente> utenti = new ArrayList <Utente>();
             if(male_BOX.isSelected() == female_BOX.isSelected())
                 errore = true;
             
-            if(errore = true){
+            if(errore == true){
                 //mettere errore che viene fuori nel caso
             }
+            
             else{
                 
                 String nome = nome_TF.getText();
