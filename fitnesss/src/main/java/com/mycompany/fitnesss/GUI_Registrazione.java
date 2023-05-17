@@ -24,7 +24,11 @@ private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 private char[] numeri = "0123456789".toCharArray();
 private int contatore_utenti = 0;
 
-public ArrayList <Utente> utenti = new ArrayList <Utente>();
+private static ArrayList <Utente> utenti = new ArrayList <Utente>();
+
+public static ArrayList getUtenti(){
+    return utenti;
+}
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
