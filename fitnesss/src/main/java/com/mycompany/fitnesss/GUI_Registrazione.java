@@ -230,9 +230,162 @@ public class GUI_Registrazione extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+    private void eta_TFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_eta_TFKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+            
+         String temp = "";
+   
+            
+            for(int i = 0; i<eta_TF.getText().length()-1; i++){
+                
+                temp = temp+eta_TF.getText().charAt(i);
+            }
+            
+            eta_TF.setText(temp);
+        }
+        
+        
+        for(int i=0; i < 52; i++){
+        if(eta_TF.getText().charAt(eta_TF.getText().length()-1) == alfabeto[i]){ 
+         
+            String temp = eta_TF.getText();
+            
+            temp = temp.replace(temp.substring(eta_TF.getText().length() - 1), "");
+            
+            eta_TF.setText(temp);            
+        }
+        }
+    }//GEN-LAST:event_eta_TFKeyReleased
+
+    private void peso_TFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_peso_TFKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+            
+         String temp = "";
+   
+            
+            for(int i = 0; i<peso_TF.getText().length()-1; i++){
+                
+                temp = temp+peso_TF.getText().charAt(i);
+            }
+            
+            peso_TF.setText(temp);
+        }
+        
+        
+        for(int i=0; i < 52; i++){
+        if(peso_TF.getText().charAt(peso_TF.getText().length()-1) == alfabeto[i]){ 
+         
+            String temp = peso_TF.getText();
+            
+            temp = temp.replace(temp.substring(peso_TF.getText().length() - 1), "");
+            
+            peso_TF.setText(temp);            
+        }
+        }
+    }//GEN-LAST:event_peso_TFKeyReleased
+
+    private void altezza_TFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_altezza_TFKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+            
+         String temp = "";
+   
+            
+            for(int i = 0; i<altezza_TF.getText().length()-1; i++){
+                
+                temp = temp+altezza_TF.getText().charAt(i);
+            }
+            
+            altezza_TF.setText(temp);
+        }
+        
+        
+        for(int i=0; i < 52; i++){
+        if(altezza_TF.getText().charAt(altezza_TF.getText().length()-1) == alfabeto[i]){ 
+         
+            String temp = altezza_TF.getText();
+            
+            temp = temp.replace(temp.substring(altezza_TF.getText().length() - 1), "");
+            
+            altezza_TF.setText(temp);            
+        }
+        }
+    }//GEN-LAST:event_altezza_TFKeyReleased
+
+    
+    
+    private void signUp_BMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUp_BMouseClicked
+        
+        boolean errore = false;
+        
+
+            
+            if(nome_TF.getText() == null)
+                errore = true;
+            if(cognome_TF.getText() == null)
+                errore = true;
+            if(eta_TF.getText() == null)
+                errore = true;
+            if(peso_TF.getText() == null)
+                errore = true;
+            if(altezza_TF.getText() == null)
+                errore = true;
+            if(username_TF.getText() == null)
+                errore = true;
+            if(password_TF.getText() == null)
+                errore = true;
+            if(male_BOX.isSelected() == female_BOX.isSelected())
+                errore = true;
+            
+            if(errore == true){
+                //mettere errore che viene fuori nel caso
+            }
+            
+            else{
+                
+                String nome = nome_TF.getText();
+                String cognome = cognome_TF.getText();
+                String username = username_TF.getText();
+                String password = password_TF.getText();
+                int eta = Integer.parseInt(eta_TF.getText());
+                double peso = Double.parseDouble(peso_TF.getText());
+                int altezza = Integer.parseInt(altezza_TF.getText());
+                int lv_attivita; // mettere il valore in base a quello che mette nella scelta
+                int obiettivo; //""
+                
+                if(male_BOX.isSelected()){
+                    Uomo temp = new Uomo(nome, cognome, username, password, peso, altezza, lv_attivita, eta, obiettivo );
+                    utenti.add(temp);
+                    contatore_utenti+=1;
+                }
+                
+                else{
+                    Donna temp = new Donna(nome, cognome, username, password, peso, altezza, lv_attivita, eta, obiettivo );
+                    utenti.add(temp);
+                    contatore_utenti+=1;
+                }
+                
+                GUI_fitness.setUtente(contatore_utenti-1);
+                //cambiare interfaccia e si va a quella "fitness"
+            }
+        
+    }//GEN-LAST:event_signUp_BMouseClicked
+
+    private void male_BOXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_male_BOXMouseClicked
+        if(female_BOX.isSelected())
+            female_BOX.setSelected(false);
+            
+    }//GEN-LAST:event_male_BOXMouseClicked
+
+    private void female_BOXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_female_BOXMouseClicked
+        if(male_BOX.isSelected())
+            male_BOX.setSelected(false);
+    }//GEN-LAST:event_female_BOXMouseClicked
+
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
+
 
     /**
      * @param args the command line arguments

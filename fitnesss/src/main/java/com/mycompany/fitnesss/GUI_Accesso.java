@@ -140,7 +140,7 @@ public class GUI_Accesso extends javax.swing.JFrame {
                 if(utenti.get(posizione).getPassword().equals(password_TF.getText())){
                     
                     GUI_fitness.setUtente(posizione);
-                    //cambia GUI e fa accesso
+                    //cambiare interfaccia e si va a quella "fitness"
                 }
                 
                 else{}

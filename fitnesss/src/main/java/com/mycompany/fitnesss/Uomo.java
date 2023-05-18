@@ -18,6 +18,7 @@ public class Uomo extends Utente{
         
         super(nome, cognome, username, password,kg, cm, lv_attivita, eta, obiettivo);       
         calcoloMetabolismo_basale();
+        calcoloMacro();
     }
     
     
@@ -78,9 +79,45 @@ public class Uomo extends Utente{
         return super.getMetabolismo_basale();
     }
     
+    public int getGrassi(){
+        return super.getGrassi();
+    }
+    
+    public int getKcal_grassi(){
+        return super.getKcal_grassi();
+    }
+    
+    public int getProteine(){
+        return super.getProteine();
+    }
+    
+    public int getKcal_proteine(){
+        return super.getKcal_proteine();
+    }
+    
+    public int getCarboidrati(){
+        return super.getCarboidrati();
+    }
+    
+    public int getKcal_carboisrati(){
+        return super.getKcal_carbo();
+    }
+    
     public void calcoloMetabolismo_basale(){
         
         super.setMetabolismo_basale((int)(66.47 + (13.75 * super.getKg()) + (5 * super.getCm()) - (6.75*super.getEta())));
+    }
+    
+    public void calcoloMacro(){
+        
+        super.setGrassi((int)super.getKg()+9);
+        super.setKcal_grassi(super.getGrassi()*9);
+        
+        super.setProteine((int)(super.getKg()*1.8));
+        super.setKcal_proteine(super.getProteine()*4);
+        
+        super.setKcal_carbo(super.getCalorie()-super.getKcal_grassi()-super.getKcal_proteine());
+        super.setCarboidrati(super.getKcal_carbo()/4);
     }
     
     
