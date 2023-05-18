@@ -26,6 +26,13 @@ public class Utente {
     private int calorie; // obiettivo giornaliero calorie
     private int calorie_giornaliere = calorie; //calorie ancora da consumare per raggiungere obiettivo giornaliero
     
+    private int grassi;
+    private int kcal_grassi;
+    private int proteine;
+    private int kcal_proteine;
+    private int carboidrati;
+    private int kcal_carbo;
+    
     public Utente(){
         
     }
@@ -137,6 +144,58 @@ public class Utente {
         return calorie_giornaliere;
     }
 
+    public int getGrassi() {
+        return grassi;
+    }
+
+    public int getProteine() {
+        return proteine;
+    }
+
+    public int getCarboidrati() {
+        return carboidrati;
+    }
+
+    public void setGrassi(int grassi) {
+        this.grassi = grassi;
+    }
+
+    public void setProteine(int proteine) {
+        this.proteine = proteine;
+    }
+
+    public void setCarboidrati(int carboidrati) {
+        this.carboidrati = carboidrati;
+    }
+
+    public int getKcal_grassi() {
+        return kcal_grassi;
+    }
+
+    public void setKcal_grassi(int kcal_grassi) {
+        this.kcal_grassi = kcal_grassi;
+    }
+
+    public int getKcal_proteine() {
+        return kcal_proteine;
+    }
+
+    public void setKcal_proteine(int kcal_proteine) {
+        this.kcal_proteine = kcal_proteine;
+    }
+
+    public int getKcal_carbo() {
+        return kcal_carbo;
+    }
+
+    public void setKcal_carbo(int kcal_carbo) {
+        this.kcal_carbo = kcal_carbo;
+    }
+    
+    
+    
+    
+
     
     private void calcoloNormocalorie(){
         this.normocalorie = (int)(metabolismo_basale * lv_attivita);
@@ -151,13 +210,7 @@ public class Utente {
         calcoloNormocalorie();
         calcoloCalorie();
     }
-    
-    
-    
-    
-    public Boolean controlloPassword(String password_ins){        
-        return password.equals(password_ins);
-    }
+
     
     
     

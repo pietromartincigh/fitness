@@ -399,21 +399,23 @@ public static ArrayList getUtenti(){
                 int eta = Integer.parseInt(eta_TF.getText());
                 double peso = Double.parseDouble(peso_TF.getText());
                 int altezza = Integer.parseInt(altezza_TF.getText());
-                
+                int lv_attivita; // mettere il valore in base a quello che mette nella scelta
+                int obiettivo; //""
                 
                 if(male_BOX.isSelected()){
-                    Uomo temp = new Uomo(nome, cognome, username, password, peso, altezza,10, eta,10 );
+                    Uomo temp = new Uomo(nome, cognome, username, password, peso, altezza, lv_attivita, eta, obiettivo );
                     utenti.add(temp);
                     contatore_utenti+=1;
                 }
                 
                 else{
-                    Donna temp = new Donna(nome, cognome, username, password, peso, altezza,10, eta,10 );
+                    Donna temp = new Donna(nome, cognome, username, password, peso, altezza, lv_attivita, eta, obiettivo );
                     utenti.add(temp);
                     contatore_utenti+=1;
                 }
                 
                 GUI_fitness.setUtente(contatore_utenti-1);
+                //cambiare interfaccia e si va a quella "fitness"
             }
         
     }//GEN-LAST:event_signUp_BMouseClicked
