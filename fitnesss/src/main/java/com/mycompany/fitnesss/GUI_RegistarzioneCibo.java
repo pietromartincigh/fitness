@@ -56,7 +56,7 @@ public class GUI_RegistarzioneCibo extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Crea nuovo cibo");
+        jLabel1.setText("Crea nuovo cibos");
 
         jLabel2.setText("Nome:");
 
@@ -112,9 +112,7 @@ public class GUI_RegistarzioneCibo extends javax.swing.JFrame {
                                         .addComponent(jLabel8)
                                         .addGap(121, 121, 121)
                                         .addComponent(jLabel10))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(63, 63, 63))
+                                    .addComponent(jLabel6)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addGap(33, 33, 33)
