@@ -46,7 +46,7 @@ public class GUI_Accesso extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ACCESSO");
+        jLabel1.setText("ACCESSOi");
 
         jLabel4.setText("Password:");
 
