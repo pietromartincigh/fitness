@@ -15,6 +15,7 @@ public class Donna extends Utente{
         super(nome, cognome, username, password, kg, cm, lv_attivita, eta, obiettivo);       
         calcoloMetabolismo_basale();
         calcoloMacro();
+        
     }
     
     
