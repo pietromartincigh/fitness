@@ -412,6 +412,8 @@ public static ArrayList getUtenti(){
                     utenti.add(temp);
                     contatore_utenti+=1;
                 }
+                
+                GUI_fitness.setUtente(contatore_utenti-1);
             }
         
     }//GEN-LAST:event_signUp_BMouseClicked

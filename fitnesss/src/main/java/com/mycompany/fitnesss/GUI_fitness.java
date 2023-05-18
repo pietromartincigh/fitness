@@ -4,6 +4,8 @@
  */
 package com.mycompany.fitnesss;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Utente
@@ -16,6 +18,17 @@ public class GUI_fitness extends javax.swing.JFrame {
     public GUI_fitness() {
         initComponents();
     }
+    
+    
+        public ArrayList <Utente> utenti = GUI_Registrazione.getUtenti();
+
+        private static int posizione; //posizione dell'utente nell'array il quale ha fatto l'accesso
+        
+        public static void setUtente(int utente){
+            GUI_fitness.posizione = utente;
+        }
+        
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
