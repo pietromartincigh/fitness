@@ -68,13 +68,31 @@ public class GUI_Registrazione extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("REGISTRAZIONE");
 
+        eta_TF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                eta_TFKeyReleased(evt);
+            }
+        });
+
         jLabel1.setText("Name:");
 
         jLabel3.setText("Last name:");
 
         jLabel4.setText("Age:");
 
+        peso_TF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                peso_TFKeyReleased(evt);
+            }
+        });
+
         jLabel5.setText("Wheigh:");
+
+        altezza_TF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                altezza_TFKeyReleased(evt);
+            }
+        });
 
         jLabel6.setText("Height:");
 
@@ -83,8 +101,18 @@ public class GUI_Registrazione extends javax.swing.JFrame {
         jLabel8.setText("cm");
 
         male_BOX.setText("Male");
+        male_BOX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                male_BOXMouseClicked(evt);
+            }
+        });
 
         female_BOX.setText("Female");
+        female_BOX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                female_BOXMouseClicked(evt);
+            }
+        });
 
         pa_CB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "low(no exercise)", "moderate (light esercise)", "high (moderate exercise)", "very high (intense exercise)" }));
 
@@ -107,6 +135,11 @@ public class GUI_Registrazione extends javax.swing.JFrame {
         jLabel14.setText("Password:");
 
         signUp_B.setText("Sign up");
+        signUp_B.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signUp_BMouseClicked(evt);
+            }
+        });
 
         jLabel15.setText("Vergognoso, sei veramente imbarazzante");
 

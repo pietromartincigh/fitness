@@ -198,6 +198,9 @@
         <Component class="javax.swing.JTextField" name="cognome_TF">
         </Component>
         <Component class="javax.swing.JTextField" name="eta_TF">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="eta_TFKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -215,6 +218,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="peso_TF">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="peso_TFKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -222,6 +228,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="altezza_TF">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="altezza_TFKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
@@ -242,11 +251,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Male"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="male_BOXMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="female_BOX">
           <Properties>
             <Property name="text" type="java.lang.String" value="Female"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="female_BOXMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="pa_CB">
           <Properties>
@@ -315,6 +330,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Sign up"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="signUp_BMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
