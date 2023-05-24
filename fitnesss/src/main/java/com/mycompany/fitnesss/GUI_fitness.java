@@ -19,7 +19,8 @@ public class GUI_fitness extends javax.swing.JFrame {
         initComponents();
     }
     
-    
+        private static ArrayList <Cibo> cibi = new ArrayList <Cibo>();
+
         public ArrayList <Utente> utenti = GUI_Registrazione.getUtenti();
 
         private static int posizione; //posizione dell'utente nell'array il quale ha fatto l'accesso
@@ -28,6 +29,51 @@ public class GUI_fitness extends javax.swing.JFrame {
             GUI_fitness.posizione = utente;
         }
         
+        
+        
+        public int[] ricercaCibo(String inserito){
+            
+            char[] ins = inserito.toCharArray();
+            
+            int[] temporaneo = new int[cibi.size()];
+
+            
+            for(int i = 0; i < cibi.size(); i++){
+            
+                char[] temp = cibi.get(i).getNome().toCharArray();
+                
+            for(int j=0; j<inserito.length(); j++){
+                
+                if(ins[j] != temp[j])
+                    break;
+                
+                if(j == inserito.length()-1)
+                   temporaneo[i] = (i+1); 
+            }
+        }
+            
+            int contatore = 0;
+            
+            for(int i = 0; i<cibi.size(); i++){
+                
+                if(temporaneo[i] != 0)
+                    contatore++;
+            }
+            
+            int[] finale = new int[contatore];
+            
+            contatore = 0;
+            
+            for(int i = 0; i<cibi.size(); i++){
+                
+                if(temporaneo[i] != 0){
+                    finale[contatore] = temporaneo[i]-1;
+                    contatore++;
+                }
+            }
+            
+            return finale;
+        }
         
 
     /**
