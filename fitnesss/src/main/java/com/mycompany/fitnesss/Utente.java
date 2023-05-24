@@ -33,6 +33,10 @@ public class Utente {
     private int carboidrati;
     private int kcal_carbo;
     
+    private int grassi_g = grassi;
+    private int proteine_g = proteine;
+    private int carboidrati_g = carboidrati;
+    
     public Utente(){
         
     }
@@ -191,6 +195,20 @@ public class Utente {
     public void setKcal_carbo(int kcal_carbo) {
         this.kcal_carbo = kcal_carbo;
     }
+
+    public int getGrassi_g() {
+        return grassi_g;
+    }
+
+    public int getProteine_g() {
+        return proteine_g;
+    }
+
+    public int getCarboidrati_g() {
+        return carboidrati_g;
+    }
+    
+    
     
     
     
@@ -222,12 +240,20 @@ public class Utente {
             throw new Exception("Calorie massime già raggiunte");
         
         int temp_cal = cibo.getKcal()*(g/100);
+        int temp_grassi = cibo.getGrassi()*(g/100);
+        int temp_proteine = cibo.getProteine()*(g/100);
+        int temp_carbo = cibo.getCarboidrati()*(g/100);
         
         if(calorie_giornaliere - temp_cal <= 0)
             throw new Exception("Superi limite calorie");
         
-        else
+        else{
             calorie_giornaliere-=temp_cal;
+            grassi_g-=temp_grassi;
+            proteine_g-=temp_proteine;
+            carboidrati_g-=temp_carbo;
+        } 
+            
     }
     
     

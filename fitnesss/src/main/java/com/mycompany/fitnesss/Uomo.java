@@ -83,24 +83,12 @@ public class Uomo extends Utente{
         return super.getGrassi();
     }
     
-    public int getKcal_grassi(){
-        return super.getKcal_grassi();
-    }
-    
     public int getProteine(){
         return super.getProteine();
     }
     
-    public int getKcal_proteine(){
-        return super.getKcal_proteine();
-    }
-    
     public int getCarboidrati(){
         return super.getCarboidrati();
-    }
-    
-    public int getKcal_carboisrati(){
-        return super.getKcal_carbo();
     }
     
     public void calcoloMetabolismo_basale(){

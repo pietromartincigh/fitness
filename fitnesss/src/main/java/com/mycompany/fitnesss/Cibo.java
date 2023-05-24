@@ -19,6 +19,19 @@ public class Cibo {
     private int grassi;
     private int sodio;
 
+    public Cibo(){
+        
+    }
+    
+    public Cibo(int kcal, int proteine, int carboidrati, int grassi){
+        
+        this.kcal = kcal;
+        this.proteine = proteine;
+        this.carboidrati = carboidrati;
+        this.grassi = grassi;
+    }
+    
+    
     public String getNome() {
         return nome;
     }
