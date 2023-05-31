@@ -197,6 +197,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="grassiCibo">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="grassiCiboKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -209,6 +212,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="proteineCibo">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="proteineCiboKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
@@ -216,6 +222,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="carboCibo">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="carboCiboKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
@@ -223,6 +232,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="kcalCibo">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="kcalCiboKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
@@ -230,6 +242,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="sodioCibo">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sodioCiboKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
@@ -260,6 +275,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Crea"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="creaCiboMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

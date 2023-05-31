@@ -19,6 +19,11 @@ public class Donna extends Utente{
     }
     
     
+    public String getSesso(){
+        return "Woman";
+    }
+    
+    
     public double getKg(){
         return super.getKg();
     }
@@ -86,6 +91,18 @@ public class Donna extends Utente{
     
     public int getCarboidrati(){
         return super.getCarboidrati();
+    }
+    
+    public int getGrassi_g() {
+        return super.getGrassi_g();
+    }
+
+    public int getProteine_g() {
+        return super.getProteine_g();
+    }
+
+    public int getCarboidrati_g() {
+        return super.getCarboidrati_g();
     }
     
     public void calcoloMetabolismo_basale(){

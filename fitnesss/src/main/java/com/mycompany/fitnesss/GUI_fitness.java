@@ -25,20 +25,35 @@ public class GUI_fitness extends javax.swing.JFrame {
     }
     
 
-        private static ArrayList <Cibo> cibi = new ArrayList <Cibo>();
+        private ArrayList <Cibo> cibi = GUI_RegistarzioneCibo.getCibi();
 
         public ArrayList <Utente> utenti = GUI_Registrazione.getUtenti();
 
     
-        //public ArrayList <Utente> utenti = GUI_Registrazione.getUtenti();
-
+ 
 
         private static int posizione; //posizione dell'utente nell'array il quale ha fatto l'accesso
         
         public static void setUtente(int utente){
             GUI_fitness.posizione = utente;
+            
+            
         }
         
+        public void aggiornamentoUtente(){
+            
+            kcal_JL.setText(utenti.get(posizione).getCalorie_giornaliere()+"/"+utenti.get(posizione).getCalorie());
+            prote_JL.setText(utenti.get(posizione).getProteine_g()+"/"+utenti.get(posizione).getProteine());
+            grassi_JL.setText(utenti.get(posizione).getGrassi_g()+"/"+utenti.get(posizione).getGrassi());
+            carbo_JL.setText(utenti.get(posizione).getCarboidrati_g()+"/"+utenti.get(posizione).getCarboidrati());
+            
+            age.setText("Age: "+utenti.get(posizione).getEta()+"");
+            altezza.setText("Height: "+utenti.get(posizione).getCm()+" cm");
+            cognome.setText(utenti.get(posizione).getCognome());
+            //gender.setText(utenti.get(posizione).getSesso());
+            nome.setText(utenti.get(posizione).getNome());
+            peso.setText("Wheight: "+utenti.get(posizione).getKg()+" Kg");
+        }
         
         
         public int[] ricercaCibo(String inserito){
@@ -104,10 +119,10 @@ public class GUI_fitness extends javax.swing.JFrame {
         proteinBar = new javax.swing.JProgressBar();
         fatBar = new javax.swing.JProgressBar();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        kcal_JL = new javax.swing.JLabel();
+        carbo_JL = new javax.swing.JLabel();
+        prote_JL = new javax.swing.JLabel();
+        grassi_JL = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaCibo = new javax.swing.JList<>();
@@ -184,17 +199,17 @@ public class GUI_fitness extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Fat");
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("0/0 kcal");
+        kcal_JL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kcal_JL.setText("0/0 kcal");
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("0/0 g");
+        carbo_JL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        carbo_JL.setText("0/0 g");
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("0/0 g");
+        prote_JL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        prote_JL.setText("0/0 g");
 
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("0/0 g");
+        grassi_JL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        grassi_JL.setText("0/0 g");
 
         javax.swing.GroupLayout todayLayout = new javax.swing.GroupLayout(today);
         today.setLayout(todayLayout);
@@ -203,23 +218,23 @@ public class GUI_fitness extends javax.swing.JFrame {
             .addGroup(todayLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(todayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(kcal_JL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(kcalBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(todayLayout.createSequentialGroup()
                         .addGroup(todayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(carbo_JL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(carboBar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
                         .addGap(30, 30, 30)
                         .addGroup(todayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(proteinBar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(prote_JL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(todayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(fatBar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(grassi_JL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         todayLayout.setVerticalGroup(
@@ -237,13 +252,13 @@ public class GUI_fitness extends javax.swing.JFrame {
                     .addComponent(proteinBar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(14, 14, 14)
                 .addGroup(todayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
+                    .addComponent(carbo_JL)
+                    .addComponent(prote_JL)
+                    .addComponent(grassi_JL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(kcalBar, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
-                .addComponent(jLabel5)
+                .addComponent(kcal_JL)
                 .addContainerGap())
         );
 
@@ -262,6 +277,11 @@ public class GUI_fitness extends javax.swing.JFrame {
         jLabel9.setText("g");
 
         cerca.setText("pasta");
+        cerca.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cercaKeyReleased(evt);
+            }
+        });
 
         aggiungi.setText("Aggiungi");
         aggiungi.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, java.awt.Color.black));
@@ -517,6 +537,26 @@ public class GUI_fitness extends javax.swing.JFrame {
         panelModificaDati.setVisible(false);
     }//GEN-LAST:event_applicaModificheMouseClicked
 
+    private void cercaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cercaKeyReleased
+        
+        if(ricercaCibo(cerca.getText()).length == 0)
+            System.out.print("errore");//errore
+        
+        else{
+        int[] elementi = new int[ricercaCibo(cerca.getText()).length];
+        
+        for(int i = 0; i <elementi.length; i++)
+            elementi[i] = ricercaCibo(cerca.getText())[i];
+        }
+        
+        //visualizza 
+        /*
+        for(int i = 0; i < elementi.lenght; i++){
+        cibi[elementi[i]] -> visualizzato nella casella
+        }*/
+        
+    }//GEN-LAST:event_cercaKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -551,6 +591,9 @@ public class GUI_fitness extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> activity;
@@ -559,11 +602,13 @@ public class GUI_fitness extends javax.swing.JFrame {
     private javax.swing.JLabel altezza;
     private javax.swing.JButton applicaModifiche;
     private javax.swing.JProgressBar carboBar;
+    private javax.swing.JLabel carbo_JL;
     private javax.swing.JTextField cerca;
     private javax.swing.JLabel cognome;
     private javax.swing.JProgressBar fatBar;
     private javax.swing.JLabel gender;
     private javax.swing.JComboBox<String> goal;
+    private javax.swing.JLabel grassi_JL;
     private javax.swing.JPanel immagine;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -573,10 +618,6 @@ public class GUI_fitness extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -584,12 +625,14 @@ public class GUI_fitness extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JProgressBar kcalBar;
+    private javax.swing.JLabel kcal_JL;
     private javax.swing.JList<String> listaCibo;
     private javax.swing.JButton modifica;
     private javax.swing.JLabel nome;
     private javax.swing.JLabel obiettivo;
     private javax.swing.JPanel panelModificaDati;
     private javax.swing.JLabel peso;
+    private javax.swing.JLabel prote_JL;
     private javax.swing.JProgressBar proteinBar;
     private javax.swing.JTextField quantitaCibo;
     private javax.swing.JPanel today;
