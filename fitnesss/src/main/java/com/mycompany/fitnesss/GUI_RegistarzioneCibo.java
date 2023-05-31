@@ -4,6 +4,11 @@
  */
 package com.mycompany.fitnesss;
 
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author marco
@@ -61,15 +66,45 @@ public class GUI_RegistarzioneCibo extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Valori nutrizionali per 100gr di prodotto:");
 
+        grassiCibo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                grassiCiboKeyReleased(evt);
+            }
+        });
+
         jLabel5.setText("Grassi:");
 
         jLabel6.setText("Proteine:");
 
+        proteineCibo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                proteineCiboKeyReleased(evt);
+            }
+        });
+
         jLabel7.setText("Carboidrati:");
+
+        carboCibo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                carboCiboKeyReleased(evt);
+            }
+        });
 
         jLabel8.setText("Kcal:");
 
+        kcalCibo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                kcalCiboKeyReleased(evt);
+            }
+        });
+
         jLabel9.setText("Sodio:");
+
+        sodioCibo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                sodioCiboKeyReleased(evt);
+            }
+        });
 
         jLabel10.setText("g");
 
@@ -82,6 +117,11 @@ public class GUI_RegistarzioneCibo extends javax.swing.JFrame {
         jLabel14.setText("mg");
 
         creaCibo.setText("Crea");
+        creaCibo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                creaCiboMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -198,6 +238,206 @@ public class GUI_RegistarzioneCibo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private char[] alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+    private static ArrayList <Cibo> cibi = new ArrayList <Cibo>();
+    
+    public static ArrayList getCibi(){
+            return cibi;
+        }
+    
+    private void controlloErrori() throws Exception{
+        
+        int kcal = Integer.parseInt(kcalCibo.getText());
+        int grassi = Integer.parseInt(grassiCibo.getText());
+        int carbo = Integer.parseInt(carboCibo.getText());
+        int proteine = Integer.parseInt(proteineCibo.getText());
+        
+        for(int i = 0; i < cibi.size(); i++){
+            if(cibi.get(i).getNome().equals(nomeCibo.getText())){
+                throw new IllegalArgumentException("Nome già utilizzato");
+            }
+        }
+        
+        if(kcal < 0)
+            throw new IllegalArgumentException("Kcal devono essere > 0");
+        if(grassi < 0)
+            throw new IllegalArgumentException("Grassi devono essere > 0");
+        if(proteine < 0)
+            throw new IllegalArgumentException("proteine devono essere > 0");
+        if(carbo < 0)
+            throw new IllegalArgumentException("Carboidrati devono essere > 0");
+        if(carbo + grassi + proteine > 100)
+            throw new IllegalArgumentException("La somma dei macro non può superare i 100 g");
+    }
+    
+    
+    private void creaCiboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_creaCiboMouseClicked
+        
+        Boolean controllo;
+        
+        do{
+            
+            controllo = false;
+            
+            try {
+                controlloErrori();
+            } catch (Exception ex) {
+                //system out errore
+                controllo = true;
+            }
+            
+        }while(controllo == true);
+        
+        
+        
+            Cibo cibo = new Cibo();
+                    
+                cibo.setNome(nomeCibo.getText());
+                cibo.setKcal(Integer.parseInt(kcalCibo.getText()));
+                cibo.setCarboidrati(Integer.parseInt(carboCibo.getText()));
+                cibo.setProteine(Integer.parseInt(proteineCibo.getText()));
+                cibo.setGrassi(Integer.parseInt(grassiCibo.getText()));
+                cibo.setSodio(Integer.parseInt(sodioCibo.getText()));
+                    
+                cibi.add(cibo);
+            
+    }//GEN-LAST:event_creaCiboMouseClicked
+
+    private void kcalCiboKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kcalCiboKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+            
+         String temp = "";
+   
+            
+            for(int i = 0; i<kcalCibo.getText().length()-1; i++){
+                
+                temp = temp+kcalCibo.getText().charAt(i);
+            }
+            
+            kcalCibo.setText(temp);
+        }
+        
+        
+        for(int i=0; i < 52; i++){
+        if(kcalCibo.getText().charAt(kcalCibo.getText().length()-1) == alfabeto[i]){ 
+         
+            String temp = kcalCibo.getText();
+            
+            temp = temp.replace(temp.substring(kcalCibo.getText().length() - 1), "");
+            
+            kcalCibo.setText(temp);            
+        }
+        }
+    }//GEN-LAST:event_kcalCiboKeyReleased
+
+    private void grassiCiboKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_grassiCiboKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+            
+         String temp = "";
+   
+            
+            for(int i = 0; i<grassiCibo.getText().length()-1; i++){
+                
+                temp = temp+grassiCibo.getText().charAt(i);
+            }
+            
+            grassiCibo.setText(temp);
+        }
+        
+        
+        for(int i=0; i < 52; i++){
+        if(grassiCibo.getText().charAt(grassiCibo.getText().length()-1) == alfabeto[i]){ 
+         
+            String temp = grassiCibo.getText();
+            
+            temp = temp.replace(temp.substring(grassiCibo.getText().length() - 1), "");
+            
+            grassiCibo.setText(temp);            
+        }
+        }
+    }//GEN-LAST:event_grassiCiboKeyReleased
+
+    private void proteineCiboKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_proteineCiboKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+            
+         String temp = "";
+   
+            
+            for(int i = 0; i<proteineCibo.getText().length()-1; i++){
+                
+                temp = temp+proteineCibo.getText().charAt(i);
+            }
+            
+            proteineCibo.setText(temp);
+        }
+        
+        
+        for(int i=0; i < 52; i++){
+        if(proteineCibo.getText().charAt(proteineCibo.getText().length()-1) == alfabeto[i]){ 
+         
+            String temp = proteineCibo.getText();
+            
+            temp = temp.replace(temp.substring(proteineCibo.getText().length() - 1), "");
+            
+            proteineCibo.setText(temp);            
+        }
+        }
+    }//GEN-LAST:event_proteineCiboKeyReleased
+
+    private void carboCiboKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_carboCiboKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+            
+         String temp = "";
+   
+            
+            for(int i = 0; i<carboCibo.getText().length()-1; i++){
+                
+                temp = temp+carboCibo.getText().charAt(i);
+            }
+            
+            carboCibo.setText(temp);
+        }
+        
+        
+        for(int i=0; i < 52; i++){
+        if(carboCibo.getText().charAt(carboCibo.getText().length()-1) == alfabeto[i]){ 
+         
+            String temp = carboCibo.getText();
+            
+            temp = temp.replace(temp.substring(carboCibo.getText().length() - 1), "");
+            
+            carboCibo.setText(temp);            
+        }
+        }
+    }//GEN-LAST:event_carboCiboKeyReleased
+
+    private void sodioCiboKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sodioCiboKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+            
+         String temp = "";
+   
+            
+            for(int i = 0; i<sodioCibo.getText().length()-1; i++){
+                
+                temp = temp+sodioCibo.getText().charAt(i);
+            }
+            
+            sodioCibo.setText(temp);
+        }
+        
+        
+        for(int i=0; i < 52; i++){
+        if(sodioCibo.getText().charAt(sodioCibo.getText().length()-1) == alfabeto[i]){ 
+         
+            String temp = sodioCibo.getText();
+            
+            temp = temp.replace(temp.substring(sodioCibo.getText().length() - 1), "");
+            
+            sodioCibo.setText(temp);            
+        }
+        }
+    }//GEN-LAST:event_sodioCiboKeyReleased
 
     /**
      * @param args the command line arguments

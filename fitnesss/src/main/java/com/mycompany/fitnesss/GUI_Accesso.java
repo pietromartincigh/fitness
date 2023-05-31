@@ -58,6 +58,11 @@ public class GUI_Accesso extends javax.swing.JFrame {
         });
 
         jButton2.setText("Sign up");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jLabel5.setText("Username:");
 
@@ -140,7 +145,6 @@ public class GUI_Accesso extends javax.swing.JFrame {
                 if(utenti.get(posizione).getPassword().equals(password_TF.getText())){
                     
                     GUI_fitness.setUtente(posizione);
-                    //cambiare interfaccia e si va a quella "fitness"
                 }
                 
                 else{}
@@ -151,6 +155,10 @@ public class GUI_Accesso extends javax.swing.JFrame {
         else{}
             //errore campi vuoti
     }//GEN-LAST:event_login_BMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
