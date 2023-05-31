@@ -110,7 +110,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <Component id="jLabel15" alignment="0" min="-2" pref="476" max="-2" attributes="0"/>
+                      <Component id="errore_L" alignment="0" min="-2" pref="476" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="58" max="32767" attributes="0"/>
               </Group>
@@ -175,7 +175,7 @@
                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                  <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                  <Component id="errore_L" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="signUp_B" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="50" max="32767" attributes="0"/>
@@ -194,11 +194,18 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="nome_TF">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nome_TFMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="cognome_TF">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cognome_TFMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="eta_TF">
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="eta_TFMouseClicked"/>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="eta_TFKeyReleased"/>
           </Events>
         </Component>
@@ -219,6 +226,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="peso_TF">
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="peso_TFMouseClicked"/>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="peso_TFKeyReleased"/>
           </Events>
         </Component>
@@ -229,6 +237,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="altezza_TF">
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="altezza_TFMouseClicked"/>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="altezza_TFKeyReleased"/>
           </Events>
         </Component>
@@ -315,10 +324,13 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="username_TF">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="username_TFMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="password_TF">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="password_TFActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="password_TFMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel14">
@@ -334,7 +346,7 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="signUp_BMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel15">
+        <Component class="javax.swing.JLabel" name="errore_L">
           <Properties>
             <Property name="text" type="java.lang.String" value="Vergognoso, sei veramente imbarazzante"/>
           </Properties>

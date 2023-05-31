@@ -4,6 +4,7 @@
  */
 package com.mycompany.fitnesss;
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
@@ -56,7 +57,7 @@ public class GUI_Registrazione extends javax.swing.JFrame {
         password_TF = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         signUp_B = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
+        errore_L = new javax.swing.JLabel();
 
         jLabel9.setText("jLabel9");
 
@@ -68,6 +69,23 @@ public class GUI_Registrazione extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("REGISTRAZIONE");
 
+        nome_TF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nome_TFMouseClicked(evt);
+            }
+        });
+
+        cognome_TF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cognome_TFMouseClicked(evt);
+            }
+        });
+
+        eta_TF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eta_TFMouseClicked(evt);
+            }
+        });
         eta_TF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 eta_TFKeyReleased(evt);
@@ -80,6 +98,11 @@ public class GUI_Registrazione extends javax.swing.JFrame {
 
         jLabel4.setText("Age:");
 
+        peso_TF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                peso_TFMouseClicked(evt);
+            }
+        });
         peso_TF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 peso_TFKeyReleased(evt);
@@ -88,6 +111,11 @@ public class GUI_Registrazione extends javax.swing.JFrame {
 
         jLabel5.setText("Wheigh:");
 
+        altezza_TF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                altezza_TFMouseClicked(evt);
+            }
+        });
         altezza_TF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 altezza_TFKeyReleased(evt);
@@ -126,9 +154,15 @@ public class GUI_Registrazione extends javax.swing.JFrame {
 
         jLabel13.setText("Username:");
 
-        password_TF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                password_TFActionPerformed(evt);
+        username_TF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                username_TFMouseClicked(evt);
+            }
+        });
+
+        password_TF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                password_TFMouseClicked(evt);
             }
         });
 
@@ -141,7 +175,7 @@ public class GUI_Registrazione extends javax.swing.JFrame {
             }
         });
 
-        jLabel15.setText("Vergognoso, sei veramente imbarazzante");
+        errore_L.setText("Vergognoso, sei veramente imbarazzante");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -194,7 +228,7 @@ public class GUI_Registrazione extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(signUp_B)
                                 .addGap(103, 103, 103))))
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(errore_L, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -246,7 +280,7 @@ public class GUI_Registrazione extends javax.swing.JFrame {
                     .addComponent(password_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
                 .addGap(13, 13, 13)
-                .addComponent(jLabel15)
+                .addComponent(errore_L)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(signUp_B)
                 .addContainerGap(50, Short.MAX_VALUE))
@@ -365,27 +399,44 @@ public static ArrayList getUtenti(){
         
         boolean errore = false;
         
-
-            
-            if(nome_TF.getText() == null)
+            if(nome_TF.getText().equals("")){
                 errore = true;
-            if(cognome_TF.getText() == null)
+                nome_TF.setBackground(Color.red);
+            }
+                
+            if(cognome_TF.getText().equals("")){
                 errore = true;
-            if(eta_TF.getText() == null)
+                cognome_TF.setBackground(Color.red);
+            }
+                
+            if(eta_TF.getText().equals("")){
                 errore = true;
-            if(peso_TF.getText() == null)
+                eta_TF.setBackground(Color.red);
+            }
+                
+            if(peso_TF.getText().equals("")){
                 errore = true;
-            if(altezza_TF.getText() == null)
+                peso_TF.setBackground(Color.red);
+            }
+                
+            if(altezza_TF.getText().equals("")){
                 errore = true;
-            if(username_TF.getText() == null)
+                altezza_TF.setBackground(Color.red);
+            }
+                
+            if(username_TF.getText().equals("")){
                 errore = true;
-            if(password_TF.getText() == null)
+                username_TF.setBackground(Color.red);
+            }
+                
+            if(password_TF.getText().equals("")){
                 errore = true;
-            if(male_BOX.isSelected() == female_BOX.isSelected())
-                errore = true;
+                password_TF.setBackground(Color.red);
+            }
             
             if(errore == true){
-                //mettere errore che viene fuori nel caso
+                errore_L.setText("Compilare tutti i campi");
+                
             }
             
             else{
@@ -414,6 +465,7 @@ public static ArrayList getUtenti(){
                 
                 GUI_fitness.setUtente(contatore_utenti-1);
                 //cambiare interfaccia e si va a quella "fitness"
+                
             }
         
     }//GEN-LAST:event_signUp_BMouseClicked
@@ -429,9 +481,33 @@ public static ArrayList getUtenti(){
             male_BOX.setSelected(false);
     }//GEN-LAST:event_female_BOXMouseClicked
 
-    private void password_TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_TFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_password_TFActionPerformed
+    private void nome_TFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nome_TFMouseClicked
+        nome_TF.setBackground(Color.white);
+    }//GEN-LAST:event_nome_TFMouseClicked
+
+    private void cognome_TFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cognome_TFMouseClicked
+        cognome_TF.setBackground(Color.white);
+    }//GEN-LAST:event_cognome_TFMouseClicked
+
+    private void eta_TFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eta_TFMouseClicked
+        eta_TF.setBackground(Color.white);
+    }//GEN-LAST:event_eta_TFMouseClicked
+
+    private void peso_TFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_peso_TFMouseClicked
+        peso_TF.setBackground(Color.white);
+    }//GEN-LAST:event_peso_TFMouseClicked
+
+    private void altezza_TFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_altezza_TFMouseClicked
+        altezza_TF.setBackground(Color.white);
+    }//GEN-LAST:event_altezza_TFMouseClicked
+
+    private void username_TFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_username_TFMouseClicked
+        username_TF.setBackground(Color.white);
+    }//GEN-LAST:event_username_TFMouseClicked
+
+    private void password_TFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_password_TFMouseClicked
+        password_TF.setBackground(Color.white);
+    }//GEN-LAST:event_password_TFMouseClicked
 
 
     /**
@@ -472,6 +548,7 @@ public static ArrayList getUtenti(){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField altezza_TF;
     private javax.swing.JTextField cognome_TF;
+    private javax.swing.JLabel errore_L;
     private javax.swing.JTextField eta_TF;
     private javax.swing.JCheckBox female_BOX;
     private javax.swing.JComboBox<String> goal_CB;
@@ -481,7 +558,6 @@ public static ArrayList getUtenti(){
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
