@@ -146,8 +146,8 @@ public class GUI_fitness extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         goal = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        pesoTF = new javax.swing.JTextField();
+        altezzaTF = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         activity = new javax.swing.JComboBox<>();
 
@@ -395,9 +395,9 @@ public class GUI_fitness extends javax.swing.JFrame {
 
         goal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lose weight", "Lose weight slowly", "maintain weight", "Increase weight slowely", "Increase weight" }));
 
-        jTextField1.setText("jTextField1");
+        pesoTF.setText("jTextField1");
 
-        jTextField2.setText("jTextField2");
+        altezzaTF.setText("altezzaTF");
 
         jLabel13.setText("Attivita:");
 
@@ -413,7 +413,7 @@ public class GUI_fitness extends javax.swing.JFrame {
                     .addGroup(panelModificaDatiLayout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(altezzaTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelModificaDatiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(panelModificaDatiLayout.createSequentialGroup()
                             .addGroup(panelModificaDatiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -422,7 +422,7 @@ public class GUI_fitness extends javax.swing.JFrame {
                             .addGroup(panelModificaDatiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(panelModificaDatiLayout.createSequentialGroup()
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(pesoTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(panelModificaDatiLayout.createSequentialGroup()
                                     .addGap(10, 10, 10)
                                     .addComponent(goal, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -440,13 +440,13 @@ public class GUI_fitness extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelModificaDatiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pesoTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(panelModificaDatiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelModificaDatiLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelModificaDatiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(altezzaTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelModificaDatiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
@@ -534,6 +534,9 @@ public class GUI_fitness extends javax.swing.JFrame {
     }//GEN-LAST:event_modificaMouseClicked
 
     private void applicaModificheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_applicaModificheMouseClicked
+        utenti.get(posizione).setKg(Double.parseDouble(pesoTF.getText()));
+        utenti.get(posizione).setCm(Integer.parseInt(altezzaTF.getText()));
+        
         panelModificaDati.setVisible(false);
     }//GEN-LAST:event_applicaModificheMouseClicked
 
@@ -600,6 +603,7 @@ public class GUI_fitness extends javax.swing.JFrame {
     private javax.swing.JLabel age;
     private javax.swing.JButton aggiungi;
     private javax.swing.JLabel altezza;
+    private javax.swing.JTextField altezzaTF;
     private javax.swing.JButton applicaModifiche;
     private javax.swing.JProgressBar carboBar;
     private javax.swing.JLabel carbo_JL;
@@ -622,8 +626,6 @@ public class GUI_fitness extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JProgressBar kcalBar;
     private javax.swing.JLabel kcal_JL;
     private javax.swing.JList<String> listaCibo;
@@ -632,6 +634,7 @@ public class GUI_fitness extends javax.swing.JFrame {
     private javax.swing.JLabel obiettivo;
     private javax.swing.JPanel panelModificaDati;
     private javax.swing.JLabel peso;
+    private javax.swing.JTextField pesoTF;
     private javax.swing.JLabel prote_JL;
     private javax.swing.JProgressBar proteinBar;
     private javax.swing.JTextField quantitaCibo;
